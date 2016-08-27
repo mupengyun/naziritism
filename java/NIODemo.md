@@ -157,7 +157,6 @@ public class TCPServer {
         // 在信道中注册选择器 只有非阻塞信道才可以注册选择器.并在注册过程中指出该信道可以进行Accept操作
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
-
         while(true){
             // 当信道可用时 每次连接一个select
             if(selector.select(3000) == 0){
